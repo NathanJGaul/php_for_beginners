@@ -2,11 +2,12 @@
 
 <?php require('partials/nav.php'); ?>
 
-<?php require('partials/banner.php'); ?>
+<!-- <?php require('partials/banner.php'); ?> -->
 
 <main>
   <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-    <p class="text-white">Welcome to the Contact page</p>
+    <h1 class="text-white text-xl">Page not found</h1>
+    <a href="/" class="text-blue-500 hover:underline">Go Home</a>
   </div>
 </main>
 
