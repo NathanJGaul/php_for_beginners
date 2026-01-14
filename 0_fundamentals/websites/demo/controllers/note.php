@@ -3,7 +3,7 @@
 $heading = "Note";
 
 $config = require('config.php');
-$db = new Database($config['database'], 'root', 'root');
+$db = new Database($config['database'], 'root', '');
 
 $note = $db->query("select * from notes where id = :id", [
   'id' => $_GET['id']
