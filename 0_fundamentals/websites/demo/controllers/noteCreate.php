@@ -1,5 +1,5 @@
 <?php
-
+require('Validator.php');
 $config = require('config.php');
 $db = new Database($config['database'], 'root', '');
 
@@ -9,9 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $errors = [];
   $body = $_POST['body'];
 
-  if (strlen($body) === 0) $errors['body'] = 'A body is required';
-
-  if (strlen($body) > 100) $errors['body'] = 'Maximum note length is 100 characters';
+  if (! Validator::string($body, 1, 1000)) $errors['body'] = 'A body of no more than 1,000 characters is required.';
 
   if (empty($errors)) {
     $db->query('INSERT INTO notes(body, user_id) VALUES(:body, :user_id)', [
