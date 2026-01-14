@@ -8,7 +8,7 @@
   <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <div class="mb-6"><a href="/notes" class="text-blue-500 hover:underline">go back</a></div>
 
-    <p class="text-white text-xl"><?= $note['body'] ?></p>
+    <p class="text-white text-xl"><?= htmlspecialchars($note['body']) ?></p>
   </div>
 </main>
 
